@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Dario's findjs function
+function findjs {
+  find . -name '*.js' -not -path '*/node_modules/*' -not -path './deploy/cdm/*' -not -path './public/*' -not -path './bundle/*' -not -path './brain/*' -not -path './*.tmp.*' -exec grep "$1" {} \; -print
+}
+
 # Create a new directory and enter it
 function mkd() {
 	mkdir -p "$@" && cd "$_";
