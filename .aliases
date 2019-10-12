@@ -83,3 +83,6 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# Print package.json scripts
+alias pkgscripts='cat package.json | jq ".scripts"'
